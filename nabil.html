@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gang Digital - Surabaya</title>
+    <link rel="stylesheet" href="iki.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏡 Gang Kita Digital</h1>
+        <p>Informasi Terpadu Warga RT 01 / RW 02</p>
+    </header>
+
+    <main>
+        <section id="status-keamanan" class="card">
+    <h2>🛡️ Status Keamanan</h2>
+    <div class="status-badge">KONDUSIF & AMAN</div>
+    <p><small>Waktu Sekarang: <span id="jam-digital">00:00:00</span></small></p>
+        </section>
+
+        <section id="pengumuman" class="card">
+            <h2>📢 Pengumuman Terbaru</h2>
+            <ul>
+                <li><strong>04 Maret:</strong> Kerja bakti minggu ini ditiadakan.</li>
+                <li><strong>01 Maret:</strong> Pembayaran sampah bulan Maret sudah dibuka.</li>
+            </ul>
+        </section>
+
+        <section id="info-kas" class="card">
+    <h2>💰 Info Kas RT</h2>
+    <div class="kas-summary">
+        <p>Saldo Saat Ini: <strong id="saldo-tekstual">Rp 2.500.000</strong></p>
+        <div style="background: #eee; border-radius: 10px; height: 10px; margin: 10px 0;">
+            <div id="bar-kas" style="background: #2a5298; width: 50%; height: 100%; border-radius: 10px; transition: 1s;"></div>
+        </div>
+        <p><small>Target Dana Aspal: Rp 5.000.000</small></p>
+        <button onclick="simulasiBayarIuran()" class="btn-kas">
+    🚀 Simulasikan Bayar Iuran
+        </button>
+    </div>
+        </section>
+
+        <section id="direktori" class="card">
+    <h2>🛍️ UMKM & Usaha Warga</h2>
+    <p>Dukung ekonomi tetangga dengan belanja di produk lokal gang kita.</p>
+    <a href="pageumkm.html" class="btn-direktori">Lihat Katalog UMKM</a>
+        </section>
+
+        <section id="layanan" class="card">
+            <h2>📞 Layanan Darurat</h2>
+            <a href="https://wa.me/628xxxxxx?text=Halo%20Pak%20RT,%20saya%20ingin%20lapor" class="btn-lapor">
+                Lapor Pak RT via WhatsApp
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dibuat dengan ❤️ oleh Wong Kene</p>
+    </footer>
+
+<script src="gerak.js"></script>
+</body>
+</html>

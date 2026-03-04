@@ -1,0 +1,162 @@
+/* 1. Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Abu-abu muda khas aplikasi modern */
+    color: #333;
+    line-height: 1.6;
+    padding: 15px;
+}
+
+/* 2. Header Style */
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradasi Biru Profesional */
+    color: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 3. Card Style (Wadah Fitur) */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #2a5298; /* Aksen garis samping */
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    color: #1e3c72;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/* 4. Status Badge Keamanan */
+.status-badge {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* 5. List Style (Pengumuman & Direktori) */
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* 6. Button Style (Lapor & Detail) */
+.btn-lapor {
+    display: block;
+    background-color: #25d366; /* Hijau WhatsApp */
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-lapor:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+}
+
+.btn-detail {
+    color: #2a5298;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* 7. Footer */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.btn-kas {
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradasi ungu-biru modern */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Biar gerakannya halus */
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+    margin-top: 15px;
+}
+
+/* Efek saat kursor nempel (Hover) */
+.btn-kas:hover {
+    transform: translateY(-2px); /* Tombol agak naik sedikit */
+    box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Efek saat diklik (Active) */
+.btn-kas:active {
+    transform: translateY(1px); /* Efek membal saat ditekan */
+    filter: brightness(0.9);
+}
+
+/* unutk pageumkm */
+
+.btn-direktori {
+    display: block;
+    background: #ff9f43; /* Warna orange yang menarik perhatian */
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(255, 159, 67, 0.3);
+}
+
+.btn-direktori:hover {
+    background: #ee5253;
+    transform: scale(1.02); /* Efek membesar sedikit */
+}
