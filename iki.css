@@ -145,7 +145,7 @@ footer {
 
 /* Menghilangkan padding card agar foto menempel ke pinggir */
 .card-umkm {
-    padding: 0 !important;
+    padding: 0 ;
     overflow: hidden;
 }
 
@@ -184,3 +184,4 @@ footer {
     color: #2a5298;
     font-size: 0.85rem;
 }
+
