@@ -141,22 +141,46 @@ footer {
     filter: brightness(0.9);
 }
 
-/* unutk pageumkm */
+/* --- KHUSUS HALAMAN UMKM --- */
 
-.btn-direktori {
-    display: block;
-    background: #ff9f43; /* Warna orange yang menarik perhatian */
-    color: white;
-    text-align: center;
-    padding: 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-    box-shadow: 0 4px 10px rgba(255, 159, 67, 0.3);
+/* Menghilangkan padding card agar foto menempel ke pinggir */
+.card-umkm {
+    padding: 0 !important;
+    overflow: hidden;
 }
 
-.btn-direktori:hover {
-    background: #ee5253;
-    transform: scale(1.02); /* Efek membesar sedikit */
+/* Styling Foto */
+.img-produk {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Efek Zoom saat card disentuh */
+.card-umkm:hover .img-produk {
+    transform: scale(1.1);
+}
+
+/* Padding untuk teks di bawah foto */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    color: #1e3c72;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.loc {
+    font-weight: bold;
+    color: #2a5298;
+    font-size: 0.85rem;
 }
