@@ -1,43 +1,101 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-body { background: #f4f7f6; padding: 15px; color: #333; }
-
-header { 
-    background: linear-gradient(135deg, #1e3c72, #2a5298); 
-    color: white; padding: 30px 15px; border-radius: 15px; 
-    text-align: center; margin-bottom: 20px;
+/* 1. RESET DASAR (Biar semua browser tampilannya sama) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-color: #f0f2f5; /* Abu-abu muda biar mata gak sakit */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px; /* Jarak dari pinggir layar HP */
+}
+
+/* 2. PEMBUNGKUS UTAMA (Agar tidak terlalu lebar di laptop) */
+main, header {
+    max-width: 500px; 
+    margin: 0 auto 20px auto; /* Menengahkan konten & beri jarak bawah */
+}
+
+/* 3. HEADER (BAGIAN ATAS) */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+header h1 { margin-bottom: 10px; font-size: 1.8rem; }
+
+/* 4. KARTU (CARD) - INI BIAR GAK MEPET */
 .card {
     background: white;
-    padding: 25px;            /* Jarak teks ke dalam lebih luas */
-    border-radius: 20px;      /* Sudut lebih membulat (modern) */
-    margin-bottom: 25px;      /* Jarak ANTAR kartu lebih jauh */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Bayangan lebih halus */
-    border: 1px solid #eee;   /* Garis tipis agar lebih tegas */
+    padding: 25px;            /* Jarak teks ke dalam (Padding) */
+    margin-bottom: 25px;      /* Jarak ANTAR KARTU (Margin) */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
-/* Progress Bar Kas */
-.progress-container { background: #eee; border-radius: 10px; height: 12px; margin: 10px 0; }
-.progress-bar { background: #2a5298; width: 50%; height: 100%; border-radius: 10px; transition: 0.5s; }
+/* 5. KHUSUS KARTU UMKM (YANG ADA FOTONYA) */
+.card-umkm {
+    padding: 0;               /* Foto tetap mentok pinggir */
+    overflow: hidden;         /* Agar ujung foto ikut melengkung */
+}
 
-/* Buttons */
+.img-produk {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 25px;            /* Teks di bawah foto dikasih jarak lagi */
+}
+
+/* 6. TOMBOL-TOMBOL */
 .btn-kas, .btn-direktori, .btn-lapor {
-    display: block; width: 100%; padding: 12px; border: none; 
-    border-radius: 10px; cursor: pointer; text-align: center; 
-    text-decoration: none; font-weight: bold; margin-top: 10px;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    transition: 0.3s;
 }
-.btn-kas { background: #2575fc; color: white; }
+
+.btn-kas { background: #007bff; color: white; }
 .btn-direktori { background: #ff9f43; color: white; }
-.btn-lapor { background: #25d366; color: white; }
-.btn-detail { color: #2a5298; text-decoration: none; font-weight: bold; }
+.btn-lapor { background: #28a745; color: white; }
 
-/* UMKM Style */
-.card-umkm { padding: 0; overflow: hidden; }
-.img-produk { width: 100%; height: 180px; object-fit: cover; }
-.card-content { padding: 15px; }
-
-.status-badge { 
-    background: #d4edda; color: #155724; padding: 5px 15px; 
-    border-radius: 20px; display: inline-block; font-weight: bold; 
+.btn-kas:hover, .btn-direktori:hover, .btn-lapor:hover {
+    transform: translateY(-3px); /* Efek naik dikit pas disentuh */
+    filter: brightness(1.1);
 }
 
+/* 7. LAIN-LAIN */
+.status-badge {
+    background: #e1f5fe;
+    color: #0288d1;
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-detail {
+    display: inline-block;
+    margin-top: 10px;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
