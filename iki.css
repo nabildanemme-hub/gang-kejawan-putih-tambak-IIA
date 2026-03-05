@@ -7,9 +7,13 @@ header {
     text-align: center; margin-bottom: 20px;
 }
 
-.card { 
-    background: white; padding: 20px; border-radius: 15px; 
-    margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+.card {
+    background: white;
+    padding: 25px;            /* Jarak teks ke dalam lebih luas */
+    border-radius: 20px;      /* Sudut lebih membulat (modern) */
+    margin-bottom: 25px;      /* Jarak ANTAR kartu lebih jauh */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06); /* Bayangan lebih halus */
+    border: 1px solid #eee;   /* Garis tipis agar lebih tegas */
 }
 
 /* Progress Bar Kas */
@@ -36,3 +40,4 @@ header {
     background: #d4edda; color: #155724; padding: 5px 15px; 
     border-radius: 20px; display: inline-block; font-weight: bold; 
 }
+
