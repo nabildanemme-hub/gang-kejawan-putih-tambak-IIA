@@ -141,47 +141,43 @@ footer {
     filter: brightness(0.9);
 }
 
-/* --- KHUSUS HALAMAN UMKM --- */
 
-/* Menghilangkan padding card agar foto menempel ke pinggir */
-.card-umkm {
-    padding: 0 ;
-    overflow: hidden;
-}
-
-/* Styling Foto */
+/* Styling khusus Foto Produk */
 .img-produk {
     width: 100%;
-    height: 200px;
-    object-fit: cover; /* Agar gambar tidak gepeng */
+    height: 200px;         /* Tinggi foto seragam */
+    object-fit: cover;     /* Foto tidak gepeng */
+    border-top-left-radius: 15px;  /* Melengkung mengikuti card */
+    border-top-right-radius: 15px;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; /* Efek transisi halus */
+}
+
+/* Membungkus konten teks agar punya padding */
+.card-content {
+    padding: 15px;
 }
 
 /* Efek Zoom saat card disentuh */
-.card-umkm:hover .img-produk {
-    transform: scale(1.1);
+.card:hover .img-produk {
+    transform: scale(1.05); /* Foto membesar sedikit */
 }
 
-/* Padding untuk teks di bawah foto */
-.card-content {
-    padding: 20px;
-}
-
-.card-content h3 {
-    margin: 0 0 10px 0;
-    color: #1e3c72;
+/* Menghilangkan overflow agar foto yang membesar tidak keluar jalur */
+.card {
+    overflow: hidden; 
+    padding: 0; /* Kita set 0 karena padding sudah diatur di .card-content */
 }
 
 .desc {
     font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 15px;
+    color: #666;
+    margin: 10px 0;
 }
 
 .loc {
+    font-size: 0.85rem;
     font-weight: bold;
     color: #2a5298;
-    font-size: 0.85rem;
+    margin-bottom: 15px;
 }
-
