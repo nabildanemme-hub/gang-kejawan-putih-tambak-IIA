@@ -45,24 +45,34 @@ window.onload = function() {
     // document.querySelector('header p').innerText = `${salam}, Warga RT 01!`;
 };
 
-let saldoSekarang = 2500000;
-const targetDana = 5000000;
 
-function simulasiBayarIuran() {
-    // Tambahkan 50 ribu setiap diklik
-    saldoSekarang += 50000;
+// Fungsi Membuka Lightbox
+function openLightbox(element) {
+    const imgUrl = element.querySelector('img').src;
+    const caption = element.querySelector('.pin-desc').innerText;
     
-    // Update teks saldo (menggunakan fungsi bawaan JS untuk format Rupiah)
-    document.getElementById('saldo-tekstual').innerText = "Rp " + saldoSekarang.toLocaleString('id-ID');
-    
-    // Hitung persentase untuk bar
-    let persen = (saldoSekarang / targetDana) * 100;
-    if (persen > 100) persen = 100; // Mentok di 100%
-    
-    // Update lebar bar kas
-    document.getElementById('bar-kas').style.width = persen + "%";
-    
-    if(persen >= 100) {
-        alert("Hore! Target Dana Aspal Tercapai!");
-    }
+    document.getElementById('lightbox-img').src = imgUrl;
+    document.getElementById('lightbox-caption').innerText = caption;
+    document.getElementById('lightbox').style.display = 'flex';
 }
+
+// Fungsi Menutup Lightbox
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+// Fungsi untuk menghilangkan loading tepat setelah 3 detik
+window.addEventListener("DOMContentLoaded", function() {
+    const loader = document.getElementById("loader-wrapper");
+    
+    // Ubah ke 2000 milidetik (2 detik)
+    setTimeout(() => {
+        loader.classList.add("loader-hidden");
+        
+        // Hapus elemen dari tampilan agar tidak mengganggu klik di bawahnya
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500); 
+        
+    }, 2000); 
+});
