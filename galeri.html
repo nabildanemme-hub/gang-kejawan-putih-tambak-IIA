@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kegiatan - Gang Kita</title>
+    <link rel="stylesheet" href="iki.css">
+</head>
+<body>
+<div id="loader-wrapper">
+    <div class="loader"></div>
+    <p>Memuat Kejawan Digital...</p>
+</div>
+    <header>
+        <h1>📸 Galeri Kegiatan</h1>
+        <p>Momen Kebersamaan Warga Kejawan Putih</p>
+    </header>
+
+    <main>
+        <div class="pin-container">
+            <div class="pin-card" onclick="openLightbox(this)">
+                <img src="foto/keg1.png" alt="Kerja Bakti">
+                <p class="pin-desc">Kerja Bakti Bulanan</p>
+            </div>
+            
+            <div class="pin-card" onclick="openLightbox(this)">
+                <img src="foto/keg2.png" alt="Lomba 17an">
+                <p class="pin-desc">Lomba Balap Karung</p>
+            </div>
+
+            <div class="pin-card" onclick="openLightbox(this)">
+                <img src="foto/keg3.png" alt="Rapat RT">
+                <p class="pin-desc">Musyawarah Warga</p>
+            </div>
+
+            <div class="pin-card" onclick="openLightbox(this)">
+                <img src="foto/keg4.png" alt="Senam Pagi">
+                <p class="pin-desc">Senam Sehat Minggu</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="nabil.html" class="btn-detail">⬅️ Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+        <div id="lightbox-caption"></div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Galeri Kejawan Digital ❤️</p>
+    </footer>
+    <script src="gerak.js"></script>
+</body>
+</html>
