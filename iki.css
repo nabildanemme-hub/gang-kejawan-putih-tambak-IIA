@@ -1,4 +1,77 @@
-/* 1. RESET DASAR (Biar semua browser tampilannya sama) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Styling Running Text (Ticker) --- */
+.ticker-wrapper {
+    max-width: 500px; /* Samakan dengan max-width main kamu */
+    margin: 10px auto;
+    background: #fff;
+    border: 2px solid #1e3c72;
+    border-radius: 50px; /* Bentuk kapsul biar modern */
+    display: flex;
+    overflow: hidden; /* Sembunyikan teks yang keluar jalur */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ticker-title {
+    background: #1e3c72;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    z-index: 2; /* Biar tulisan INFO tetap di depan */
+}
+
+.ticker-text {
+    white-space: nowrap; /* Biar teks gak turun ke bawah */
+    display: flex;
+    align-items: center;
+    padding-left: 100%; /* Mulai dari luar kotak kanan */
+    animation: running-text 20s linear infinite; /* 20 detik untuk satu putaran */
+}
+
+.ticker-text span {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Animasi Pergerakan */
+@keyframes running-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Biar pas disentuh kursor berhenti (biar warga bisa baca pelan-pelan) */
+.ticker-wrapper:hover .ticker-text {
+    animation-play-state: paused;
+}
+
+
+/* 1. Siapkan animasinya */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Muncul dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Pasang di kartu (UMKM, Galeri, dll) */
+.card, .pin-card, .card-umkm {
+    animation: fadeInUp 0.9s ease-out forwards;
+}
+
+.card:hover, .pin-card:hover {
+    box-shadow: 0 10px 20px rgba(30, 60, 114, 0.2);
+    transform: translateY(-5px); /* Kartu sedikit naik ke atas */
+}
+
+/* 1. Reset & Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,95 +80,313 @@
 }
 
 body {
-    background-color: #f0f2f5; /* Abu-abu muda biar mata gak sakit */
+    background-color: #f0f2f5; /* Abu-abu muda khas aplikasi modern */
     color: #333;
     line-height: 1.6;
-    padding: 20px; /* Jarak dari pinggir layar HP */
+    padding: 15px;
 }
 
-/* 2. PEMBUNGKUS UTAMA (Agar tidak terlalu lebar di laptop) */
-main, header {
-    max-width: 500px; 
-    margin: 0 auto 20px auto; /* Menengahkan konten & beri jarak bawah */
-}
-
-/* 3. HEADER (BAGIAN ATAS) */
+/* 2. Header Style */
 header {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    padding: 40px 20px;
-    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradasi Biru Profesional */
+    color: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-header h1 { margin-bottom: 10px; font-size: 1.8rem; }
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
 
-/* 4. KARTU (CARD) - INI BIAR GAK MEPET */
+header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 3. Card Style (Wadah Fitur) */
 .card {
     background: white;
-    padding: 25px;            /* Jarak teks ke dalam (Padding) */
-    margin-bottom: 25px;      /* Jarak ANTAR KARTU (Margin) */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #2a5298; /* Aksen garis samping */
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    color: #1e3c72;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/* 4. Status Badge Keamanan */
+.status-badge {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 8px 15px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.85rem;
 }
 
-/* 5. KHUSUS KARTU UMKM (YANG ADA FOTONYA) */
-.card-umkm {
-    padding: 0;               /* Foto tetap mentok pinggir */
-    overflow: hidden;         /* Agar ujung foto ikut melengkung */
+/* 5. List Style (Pengumuman & Direktori) */
+ul {
+    list-style: none;
 }
 
-.img-produk {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* 6. Button Style (Lapor & Detail) */
+.btn-lapor {
     display: block;
-}
-
-.card-content {
-    padding: 25px;            /* Teks di bawah foto dikasih jarak lagi */
-}
-
-/* 6. TOMBOL-TOMBOL */
-.btn-kas, .btn-direktori, .btn-lapor {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin-top: 15px;
+    background-color: #25d366; /* Hijau WhatsApp */
+    color: white;
     text-align: center;
+    padding: 12px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 12px;
-    border: none;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
-.btn-kas { background: #007bff; color: white; }
-.btn-direktori { background: #ff9f43; color: white; }
-.btn-lapor { background: #28a745; color: white; }
-
-.btn-kas:hover, .btn-direktori:hover, .btn-lapor:hover {
-    transform: translateY(-3px); /* Efek naik dikit pas disentuh */
-    filter: brightness(1.1);
-}
-
-/* 7. LAIN-LAIN */
-.status-badge {
-    background: #e1f5fe;
-    color: #0288d1;
-    padding: 8px 15px;
-    border-radius: 50px;
-    display: inline-block;
-    font-weight: bold;
-    margin-top: 10px;
+.btn-lapor:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
 }
 
 .btn-detail {
-    display: inline-block;
-    margin-top: 10px;
-    color: #666;
+    color: #2a5298;
     text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* 7. Footer */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+
+/* --- Tambahan Khusus Agar Tidak Mepet & Mendukung Foto --- */
+
+/* 1. Container Utama agar tidak terlalu lebar di layar laptop */
+main {
+    max-width: 550px; /* Standar ukuran aplikasi mobile agar nyaman di mata */
+    margin: 0 auto;   /* Menengahkan seluruh isi website */
+}
+
+/* 2. Modifikasi Card khusus UMKM agar Foto bisa Full ke pinggir */
+.card-umkm {
+    padding: 0;         /* Menghilangkan padding agar foto nempel ke tepi */
+    overflow: hidden;   /* Agar ujung foto yang tajam mengikuti lengkungan kartu */
+}
+
+/* 3. Desain Foto Produk Online */
+.img-produk {
+    width: 100%;
+    height: 200px;      /* Tinggi foto seragam */
+    object-fit: cover;  /* Foto otomatis terpotong rapi tanpa jadi gepeng */
+    display: block;
+}
+
+/* 4. Ruang untuk Teks di bawah foto agar tidak mepet ke pinggir foto */
+.card-content {
+    padding: 20px;      /* Memberi "napas" pada teks di dalam kartu UMKM */
+}
+
+/* 5. Tombol Lihat Katalog (Tombol Orange) */
+.btn-direktori {
+    display: block;
+    background: #ff9f43;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-direktori:hover {
+    background: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* --- Styling Tabel Jadwal --- */
+.jadwal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
     font-size: 0.9rem;
 }
+
+.jadwal-table th {
+    background-color: #2a5298;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+.jadwal-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Efek Zebra: Baris genap dikasih warna beda */
+.jadwal-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* --- STYLE GALERI PINTEREST --- */
+.pin-container {
+    column-count: 2; /* 2 kolom di HP */
+    column-gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .pin-container { column-count: 3; } /* 3 kolom di Laptop */
+}
+
+.pin-card {
+    background: white;
+    margin-bottom: 15px;
+    break-inside: avoid; /* Biar kartu gak terpotong di tengah kolom */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pin-card:hover { transform: scale(1.02); }
+
+.pin-card img {
+    width: 100%;
+    display: block;
+}
+
+.pin-desc {
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- STYLE LIGHTBOX (EFEK ZOOM) --- */
+.lightbox {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white; font-size: 40px; cursor: pointer;
+}
+
+#lightbox-caption {
+    color: white; margin-top: 15px; font-weight: bold;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- STYLE LOADING SCREEN --- */
+#loader-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #ffffff; /* Warna latar saat loading */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan di atas semua elemen */
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #1e3c72; /* Warna biru senada headermu */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+#loader-wrapper p {
+    font-family: sans-serif;
+    color: #1e3c72;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Animasi Putar */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Class untuk menghilangkan loader */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card, .card-umkm, .pin-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0; /* Garis pinggir sangat tipis */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan sangat halus */
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat kursor di atasnya (Hover) */
+.card:hover, .card-umkm:hover, .pin-card:hover {
+    transform: translateY(-8px); /* Melayang sedikit */
+    box-shadow: 0 15px 35px rgba(30, 60, 114, 0.15); /* Bayangan jadi lebih tegas */
+    border-color: #1e3c72; /* Garis pinggir berubah warna biru */
+}
+
+
