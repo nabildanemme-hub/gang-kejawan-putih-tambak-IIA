@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Gang Digital - Surabaya</title>
+    <title>Kejawan Digital - Surabaya</title>
     <link rel="stylesheet" href="iki.css">
 </head>
 <body>
+<div id="loader-wrapper">
+    <div class="loader"></div>
+    <p>Memuat Kejawan Digital...</p>
+</div>
+
 
     <header>
-        <h1>🏡 Gang Kita Digital</h1>
-        <p>Informasi Terpadu Warga RT 01 / RW 02</p>
+        <h1>Kejawan Digital</h1>
+        <p>Informasi Terpadu Warga RT 01 / RW 01</p>
     </header>
+
+<div class="ticker-wrapper">
+    <div class="ticker-title">INFO:</div>
+    <div class="ticker-text">
+        <span>📢 Besok ada Fogging jam 09.00 pagi, mohon tutup makanan! &nbsp;&nbsp;&nbsp; 🧹 Kerja Bakti hari Minggu depan di Lapangan Voli! &nbsp;&nbsp;&nbsp; 📦 Paket nyasar di rumah No. 15 atas nama Zio.</span>
+    </div>
+</div>
 
     <main>
         <section id="status-keamanan" class="card">
@@ -28,19 +40,33 @@
             </ul>
         </section>
 
-        <section id="info-kas" class="card">
-    <h2>💰 Info Kas RT</h2>
-    <div class="kas-summary">
-        <p>Saldo Saat Ini: <strong id="saldo-tekstual">Rp 2.500.000</strong></p>
-        <div style="background: #eee; border-radius: 10px; height: 10px; margin: 10px 0;">
-            <div id="bar-kas" style="background: #2a5298; width: 50%; height: 100%; border-radius: 10px; transition: 1s;"></div>
-        </div>
-        <p><small>Target Dana Aspal: Rp 5.000.000</small></p>
-        <button onclick="simulasiBayarIuran()" class="btn-kas">
-    🚀 Simulasikan Bayar Iuran
-        </button>
-    </div>
-        </section>
+        <section class="card">
+    <h2>📅 Jadwal Mingguan</h2>
+    <table class="jadwal-table">
+        <tr>
+            <th>Hari</th>
+            <th>Kegiatan</th>
+        </tr>
+        <tr>
+            <td>Senin</td>
+            <td>Tidak ada</td>
+        </tr>
+        <tr>
+            <td>Kamis</td>
+            <td>Tidak ada</td>
+        </tr>
+        <tr>
+            <td>Minggu</td>
+            <td>Tidak ada</td>
+        </tr>
+    </table>
+</section>
+
+<section class="card">
+    <h2>📸 Dokumentasi Warga</h2>
+    <p>Lihat kumpulan foto kegiatan seru di gang kita.</p>
+    <a href="galeri.html" class="btn-direktori" style="background: #6c5ce7;">Buka Galeri Foto</a>
+</section>
 
         <section id="direktori" class="card">
     <h2>🛍️ UMKM & Usaha Warga</h2>
@@ -50,17 +76,16 @@
 
         <section id="layanan" class="card">
             <h2>📞 Layanan Darurat</h2>
-            <a href="https://wa.me/628xxxxxx?text=Halo%20Pak%20RT,%20saya%20ingin%20lapor" class="btn-lapor">
+            <a href="https://wa.me/6282332569247?text=Halo%20Pak%20RT,%20saya%20ingin%20lapor" class="btn-lapor">
                 Lapor Pak RT via WhatsApp
             </a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Dibuat dengan ❤️ oleh Wong Kene</p>
+        <p>&copy; 2026 Dibuat dengan ❤️ oleh M.Nabil Al Ma'ruf</p>
     </footer>
 
 <script src="gerak.js"></script>
 </body>
-
 </html>
