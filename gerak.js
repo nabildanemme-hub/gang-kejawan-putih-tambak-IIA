@@ -76,3 +76,47 @@ window.addEventListener("DOMContentLoaded", function() {
         
     }, 2000); 
 });
+
+
+
+
+  // Fungsi untuk mengecek dan memunculkan iklan
+  function cekDanMunculkanIklan() {
+    const durasi4Jam = 4 * 60 * 60 * 1000; // 4 jam dalam milidetik
+    const sekarang = new Date().getTime();
+    const terakhirMuncul = localStorage.getItem("lastIklanTime");
+
+    // Jika belum pernah muncul ATAU sudah lewat dari 4 jam
+    if (!terakhirMuncul || (sekarang - terakhirMuncul > durasi4Jam)) {
+      setTimeout(function() {
+        const modal = document.getElementById("iklanModal");
+        if (modal) {
+          modal.style.display = "flex";
+          // Catat waktu muncul di browser warga
+          localStorage.setItem("lastIklanTime", sekarang);
+        }
+      }, 3000); // Muncul setelah 3 detik
+    } else {
+      console.log("Iklan masih dalam masa jeda 4 jam.");
+    }
+  }
+
+  // Fungsi untuk menutup iklan
+  function tutupPopup() {
+    const modal = document.getElementById("iklanModal");
+    if (modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Klik di area hitam (luar gambar) untuk menutup
+  window.onclick = function(event) {
+    const modal = document.getElementById("iklanModal");
+    if (event.target == modal) {
+      tutupPopup();
+    }
+  }
+
+  // Jalankan fungsi saat halaman dimuat
+  window.onload = cekDanMunculkanIklan;
+
