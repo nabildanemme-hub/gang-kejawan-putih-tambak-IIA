@@ -7,7 +7,7 @@ html {
     max-width: 500px; /* Samakan dengan max-width main kamu */
     margin: 10px auto;
     background: #fff;
-    border: 2px solid #1e3c72;
+    border: 2px solid #2d5241;
     border-radius: 50px; /* Bentuk kapsul biar modern */
     display: flex;
     overflow: hidden; /* Sembunyikan teks yang keluar jalur */
@@ -15,7 +15,7 @@ html {
 }
 
 .ticker-title {
-    background: #1e3c72;
+    background: #2d5241;
     color: white;
     padding: 10px 15px;
     font-weight: bold;
@@ -80,8 +80,8 @@ html {
 }
 
 body {
-    background-color: #f0f2f5; /* Abu-abu muda khas aplikasi modern */
-    color: #333;
+    background-color: #f0f5f2; /* Abu-abu muda khas aplikasi modern */
+    color: #1a2b23;
     line-height: 1.6;
     padding: 15px;
 }
@@ -89,7 +89,7 @@ body {
 /* 2. Header Style */
 header {
     text-align: center;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradasi Biru Profesional */
+    background: linear-gradient(135deg, #1a2b23 0%, #2d5241 100%); /* Gradasi Biru Profesional */
     color: white;
     padding: 30px 20px;
     border-radius: 15px;
@@ -114,12 +114,12 @@ header p {
     border-radius: 15px;
     margin-bottom: 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-left: 5px solid #2a5298; /* Aksen garis samping */
+    border-left: 5px solid #76ba99; /* Aksen garis samping */
 }
 
 .card h2 {
     font-size: 1.1rem;
-    color: #1e3c72;
+    color: #1a2b23;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -127,8 +127,8 @@ header p {
 
 /* 4. Status Badge Keamanan */
 .status-badge {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #d1e7dd;
+    color: #0f5132;
     padding: 8px 15px;
     border-radius: 20px;
     display: inline-block;
@@ -171,7 +171,7 @@ ul li:last-child {
 }
 
 .btn-detail {
-    color: #2a5298;
+    color: #76ba99;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: bold;
@@ -213,6 +213,12 @@ main {
 .card-content {
     padding: 20px;      /* Memberi "napas" pada teks di dalam kartu UMKM */
 }
+.img-poster-full {
+    width: 100%;
+    height: auto;      /* Ini kuncinya: tinggi mengikuti asli gambar */
+    display: block;
+    border-radius: 12px;
+}
 
 /* 5. Tombol Lihat Katalog (Tombol Orange) */
 .btn-direktori {
@@ -242,7 +248,7 @@ main {
 }
 
 .jadwal-table th {
-    background-color: #2a5298;
+    background-color: #2d5241;
     color: white;
     text-align: left;
     padding: 10px;
@@ -348,7 +354,7 @@ main {
     width: 50px;
     height: 50px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #1e3c72; /* Warna biru senada headermu */
+    border-top: 5px solid #2d5241; /* Warna biru senada headermu */
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 15px;
@@ -356,7 +362,7 @@ main {
 
 #loader-wrapper p {
     font-family: sans-serif;
-    color: #1e3c72;
+    color: #2d5241;
     font-weight: bold;
     font-size: 0.9rem;
 }
@@ -389,4 +395,110 @@ main {
     border-color: #1e3c72; /* Garis pinggir berubah warna biru */
 }
 
+/* Container utama (Background Gelap) */
+  .modal-iklan-container {
+    display: none; /* Sembunyi dulu saat loading */
+    position: fixed;
+    z-index: 99999; /* Pastikan paling depan */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    
+    /* Membuat konten tepat di tengah layar */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Kotak Konten Iklan */
+  .modal-iklan-content {
+    position: relative;
+    width: 85%;
+    max-width: 380px; /* Ukuran maksimal biar gak kegedean di tablet */
+    animation: zoomIn 0.4s ease; /* Efek muncul pelan */
+  }
+
+  /* Gambar Iklan */
+  .img-iklan-responsif {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+  }
+
+  /* Tombol Close (X) */
+  .modal-iklan-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  }
+
+  /* Animasi Sederhana */
+  @keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* INFO UPDATE BOSSS /*
+  /* Container Box */
+.update-wa-container {
+    background: #fdfdfd;
+    border: 2px dashed #25D366; /* Garis putus-putus warna WA */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.update-wa-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Tombol Estetik */
+.btn-wa-update {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    animation: getar 3s infinite; /* Animasi getar */
+}
+
+.btn-wa-update:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-wa-update i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Animasi Getar Halus agar Warga Melirik */
+@keyframes getar {
+    0% { transform: scale(1); }
+    5% { transform: scale(1.05); }
+    10% { transform: scale(1); }
+    15% { transform: scale(1.05); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
 
