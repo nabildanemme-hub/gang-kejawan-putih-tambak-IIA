@@ -117,8 +117,7 @@ window.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Jalankan fungsi saat halaman dimuat
-  window.onload = cekDanMunculkanIklan;
+
 
 function cariUMKM() {
     // 1. Njupuk opo sing diketik warga
@@ -166,7 +165,26 @@ function cekStatusToko() {
     });
 }
 
-// Jalankan fungsi pas web dibuka
-window.onload = cekStatusToko;
+window.onload = function() {
+    // 1. Jalankan fungsi jam digital
+    updateClock(); // Pastikan updateClock() dipanggil pertama kali
+    
+    // 2. Jalankan fungsi status toko
+    cekStatusToko();
+    
+    // 3. Jalankan fungsi iklan
+    cekDanMunculkanIklan();
+    
+    // 4. Jalankan fungsi salam (logic yang tadi di atas)
+    const hour = new Date().getHours();
+    let salam = "Selamat Datang";
+    if (hour < 11) salam = "Selamat Pagi";
+    else if (hour < 15) salam = "Selamat Siang";
+    else if (hour < 19) salam = "Selamat Sore";
+    else salam = "Selamat Malam";
+    
+    console.log(`Sistem Berhasil Dimuat. Jam: ${hour}. Pesan: ${salam}`);
+};
+
 
 
