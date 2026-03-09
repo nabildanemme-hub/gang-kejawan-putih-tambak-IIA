@@ -502,3 +502,23 @@ main {
     100% { transform: scale(1); }
 }
 
+.search-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #28a745; /* Warna hijau biar senada */
+    border-radius: 25px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+
+
