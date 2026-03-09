@@ -120,3 +120,27 @@ window.addEventListener("DOMContentLoaded", function() {
   // Jalankan fungsi saat halaman dimuat
   window.onload = cekDanMunculkanIklan;
 
+function cariUMKM() {
+    // 1. Njupuk opo sing diketik warga
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // 2. Nggoleki kabeh kartu sing duwe class 'card-umkm'
+    let cards = document.getElementsByClassName('card-umkm');
+
+    for (let i = 0; i < cards.length; i++) {
+        // 3. Njupuk keyword teko atribut 'data-name'
+        let name = cards[i].getAttribute('data-name').toLowerCase();
+        
+        // 4. Njupuk teks teko judul (h3) ben pencariane luwih akurat
+        let title = cards[i].querySelector('h3').innerText.toLowerCase();
+        
+        // 5. Cocokno: nek ono isine, tampilno. Nek gak ono, dhelikno.
+        if (name.includes(input) || title.includes(input)) {
+            cards[i].style.display = ""; // Tampil
+        } else {
+            cards[i].style.display = "none"; // Hilang
+        }
+    }
+}
+
+
