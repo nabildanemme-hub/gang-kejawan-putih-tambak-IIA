@@ -144,3 +144,29 @@ function cariUMKM() {
 }
 
 
+function cekStatusToko() {
+    // Ambil jam sekarang (format 0-23)
+    const jamSekarang = new Date().getHours();
+    
+    // Ambil semua kartu UMKM
+    const kartuUMKM = document.querySelectorAll('.card-umkm');
+
+    kartuUMKM.forEach(card => {
+        const jamBuka = parseInt(card.getAttribute('data-buka'));
+        const jamTutup = parseInt(card.getAttribute('data-tutup'));
+        const statusLabel = card.querySelector('.status-toko');
+
+        if (jamSekarang >= jamBuka && jamSekarang < jamTutup) {
+            statusLabel.innerText = "● SEDANG BUKA";
+            statusLabel.className = "status-toko status-buka";
+        } else {
+            statusLabel.innerText = "○ SUDAH TUTUP";
+            statusLabel.className = "status-toko status-tutup";
+        }
+    });
+}
+
+// Jalankan fungsi pas web dibuka
+window.onload = cekStatusToko;
+
+
