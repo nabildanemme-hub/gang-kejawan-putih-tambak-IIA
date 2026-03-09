@@ -30,20 +30,7 @@ function gantiStatusKeamanan(status) {
 }
 
 // 3. Pesan Selamat Datang Berdasarkan Waktu
-window.onload = function() {
-    const h1 = document.querySelector('header h1');
-    const hour = new Date().getHours();
-    let salam = "Selamat Datang";
 
-    if (hour < 11) salam = "Selamat Pagi";
-    else if (hour < 15) salam = "Selamat Siang";
-    else if (hour < 19) salam = "Selamat Sore";
-    else salam = "Selamat Malam";
-
-    console.log(`Sistem Berhasil Dimuat. Jam: ${hour}. Pesan: ${salam}`);
-    // Kamu bisa ganti teks header secara dinamis
-    // document.querySelector('header p').innerText = `${salam}, Warga RT 01!`;
-};
 
 
 // Fungsi Membuka Lightbox
@@ -166,24 +153,29 @@ function cekStatusToko() {
 }
 
 window.onload = function() {
-    // 1. Jalankan fungsi jam digital
-    updateClock(); // Pastikan updateClock() dipanggil pertama kali
-    
-    // 2. Jalankan fungsi status toko
+    // 1. Jalankan Jam
+    updateClock(); 
+    setInterval(updateClock, 1000); 
+
+    // 2. Jalankan Status Toko
     cekStatusToko();
-    
-    // 3. Jalankan fungsi iklan
+
+    // 3. Jalankan Iklan
     cekDanMunculkanIklan();
-    
-    // 4. Jalankan fungsi salam (logic yang tadi di atas)
+
+    // 4. Masukkan logika "Salam" ke sini (ini hasil gabungan tadi)
+    const h1 = document.querySelector('header h1');
     const hour = new Date().getHours();
     let salam = "Selamat Datang";
+
     if (hour < 11) salam = "Selamat Pagi";
     else if (hour < 15) salam = "Selamat Siang";
     else if (hour < 19) salam = "Selamat Sore";
     else salam = "Selamat Malam";
-    
+
     console.log(`Sistem Berhasil Dimuat. Jam: ${hour}. Pesan: ${salam}`);
+    // Kamu bisa ganti teks header secara dinamis
+    // document.querySelector('header p').innerText = `${salam}, Warga RT 01!`;
 };
 
 
