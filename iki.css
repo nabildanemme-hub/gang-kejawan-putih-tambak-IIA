@@ -558,6 +558,7 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 9999;
     transition: all 0.3s ease;
+    display: none;
 }
 
 /* Efek pas tombol demek/hover */
@@ -581,6 +582,7 @@ main {
         border-radius: 50%; /* Dadi bunder nek nang HP */
     }
 }
+
 
 
 
