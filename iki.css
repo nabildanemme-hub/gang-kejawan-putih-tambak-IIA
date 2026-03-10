@@ -542,5 +542,45 @@ main {
     border: 1px solid #f5c6cb;
 }
 
+.btn-kembali-floating {
+    position: fixed;
+    bottom: 25px; /* Jarak seko ngisor */
+    left: 20px;   /* Jarak seko kiwa */
+    background: linear-gradient(135deg, #28a745, #218838); /* Warna ijo segar */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px; /* Bentuk kapsul ben modern */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+/* Efek pas tombol demek/hover */
+.btn-kembali-floating:hover {
+    transform: translateY(-5px); /* Membal mendhuwur sithik */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.icon-bali {
+    font-size: 1.2rem;
+}
+
+/* Ben gak ngebaki layar HP sing cilik */
+@media (max-width: 600px) {
+    .text-bali {
+        display: none; /* Nek nang HP, tulisan 'Beranda' ilang, mung panah wae ben simpel */
+    }
+    .btn-kembali-floating {
+        padding: 15px;
+        border-radius: 50%; /* Dadi bunder nek nang HP */
+    }
+}
+
 
 
