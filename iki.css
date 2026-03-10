@@ -546,6 +546,7 @@ main {
     position: fixed;
     bottom: 25px; /* Jarak seko ngisor */
     left: 20px;   /* Jarak seko kiwa */
+    display: none;
     background: linear-gradient(135deg, #28a745, #218838); /* Warna ijo segar */
     color: white;
     padding: 12px 20px;
@@ -558,7 +559,7 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     z-index: 9999;
     transition: all 0.3s ease;
-    display: none;
+    
 }
 
 /* Efek pas tombol demek/hover */
@@ -582,6 +583,7 @@ main {
         border-radius: 50%; /* Dadi bunder nek nang HP */
     }
 }
+
 
 
 
