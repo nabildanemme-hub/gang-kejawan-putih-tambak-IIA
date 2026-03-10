@@ -51,17 +51,21 @@ function closeLightbox() {
 // Fungsi untuk menghilangkan loading tepat setelah 3 detik
 window.addEventListener("DOMContentLoaded", function() {
     const loader = document.getElementById("loader-wrapper");
+    const btnBali = document.querySelector(".btn-kembali-floating"); // Ambil elemen tombol
     
-    // Ubah ke 2000 milidetik (2 detik)
     setTimeout(() => {
         loader.classList.add("loader-hidden");
         
-        // Hapus elemen dari tampilan agar tidak mengganggu klik di bawahnya
+        // --- TOMBOL LAGI METU NING KENE ---
+        if (btnBali) {
+            btnBali.style.display = "flex"; // Munculno tombol pas loading rampung
+        }
+        
         setTimeout(() => {
             loader.style.display = "none";
         }, 500); 
         
-    }, 2000); 
+    }, 2000); // 2 detik loading
 });
 
 
@@ -177,6 +181,7 @@ window.onload = function() {
     // Kamu bisa ganti teks header secara dinamis
     // document.querySelector('header p').innerText = `${salam}, Warga RT 01!`;
 };
+
 
 
 
