@@ -543,10 +543,10 @@ main {
 }
 
 .btn-kembali-floating {
+    display: none;
     position: fixed;
     bottom: 25px; /* Jarak seko ngisor */
     left: 20px;   /* Jarak seko kiwa */
-    display: none;
     background: linear-gradient(135deg, #28a745, #218838); /* Warna ijo segar */
     color: white;
     padding: 12px 20px;
@@ -583,6 +583,7 @@ main {
         border-radius: 50%; /* Dadi bunder nek nang HP */
     }
 }
+
 
 
 
