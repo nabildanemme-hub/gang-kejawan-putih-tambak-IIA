@@ -4,6 +4,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
+  '/gerak.js',
   // Nek kowe duwe gambar, lebokno sisan jenenge nang kene:
   // '/logo.png',
   // '/gambar-lomba.png'
